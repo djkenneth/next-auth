@@ -1,9 +1,9 @@
 import React from "react";
 
-const Text = ({ text, fontSize, textColor, customStyle, customContainerStyle }) => {
+const Text = ({ text, className, customContainerStyle }) => {
   return (
     <div className={`${customContainerStyle}`}>
-      <p className={`${fontSize} ${textColor} ${customStyle}`}>{text}</p>
+      <p className={`${className}`}>{text}</p>
     </div>
   );
 };

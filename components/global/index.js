@@ -1,5 +1,5 @@
 import Button from "./Button";
-import HeadingText from "./HeadingText";
+import Heading from "./Heading";
 import Text from "./Text";
 
-export { Button, HeadingText, Text };
+export { Button, Heading, Text };

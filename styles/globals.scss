@@ -1,7 +1,44 @@
 /* ./styles/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+// @layer base {
+//   @font-face {
+//     font-family: "HelveticaNeue Thin";
+//     font-weight: 100;
+//     font-style: normal;
+//     src: url("../public/fonts/HelveticaNeue-Thin.woff2") format("woff2");
+//   }
+
+//   @font-face {
+//     font-family: "HelveticaNeue Light";
+//     font-weight: 300;
+//     font-style: normal;
+//     src: url("../public/fonts/HelveticaNeue-Light.woff2") format("woff2");
+//   }
+
+//   @font-face {
+//     font-family: "HelveticaNeue";
+//     font-weight: 400;
+//     // font-style: normal;
+//     src: url("../public/fonts/HelveticaNeue.woff2") format("woff2");
+//   }
+
+//   @font-face {
+//     font-family: "HelveticaNeue Medium";
+//     font-weight: 500;
+//     font-style: normal;
+//     src: url("../public/fonts/HelveticaNeue-Bold.woff2") format("woff2");
+//   }
+
+//   @font-face {
+//     font-family: "HelveticaNeue Bold";
+//     font-weight: 700;
+//     font-style: normal;
+//     src: url("../public/fonts/HelveticaNeue-Bold.woff2") format("woff2");
+//   }
+// }
 
 @layer utilities {
   input[type="number"]::-webkit-inner-spin-button,
