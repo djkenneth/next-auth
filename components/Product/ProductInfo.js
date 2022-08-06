@@ -33,7 +33,7 @@ const ProductInfo = () => {
         <RiFacebookFill className="text-white mr-1" />
         <Text text="share" className="text-sm text-white" />
       </div>
-      <div className="flex">
+      <div className="flex items-center">
         <Text text="Available: " className="text-sm text-gray-400 m-1" />
         <Text text="In Stock" className="text-sm text-amber-500 font-bold mr-1" />
       </div>
