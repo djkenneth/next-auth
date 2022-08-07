@@ -22,7 +22,7 @@ const ProductInfo = () => {
         customContainerStyle="mb-2"
       />
       <div className="flex justify-items-center mb-2">
-        <ReactStars size={25} value={1} edit={false} classNames="mr-1" />
+        <ReactStars size={20} value={1} edit={false} classNames="mr-1" />
         <Text
           text="28 reviews"
           className="text-sm text-gray-600"
