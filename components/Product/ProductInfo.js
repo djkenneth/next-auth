@@ -72,13 +72,13 @@ const ProductInfo = () => {
           text="Add to cart"
           bgColor="bg-yellow-400"
           textColor="text-white"
-          custonStyle="mr-4 hover:bg-slate-700"
+          custonStyle="mr-4 py-3 px-8 hover:bg-slate-700"
         />
         <Button
           text="Buy It Now"
           bgColor="bg-slate-700"
           textColor="text-white"
-          custonStyle="hover:bg-yellow-400"
+          custonStyle="py-3 px-8 hover:bg-yellow-400"
         />
       </div>
     </>
