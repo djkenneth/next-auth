@@ -68,8 +68,9 @@ const ProductReview = () => {
               options={[
                 { value: "most_recent", name: "Most Recent" },
                 { value: "highest_rating", name: "Highest Rating" },
+                { value: "lowest_rating", name: "Lowest Rating" },
               ]}
-              className="bg-transparent text-sm border border-black py-1 rounded-r-2xl rounded-l-2xl focus:outline-none"
+              className="bg-transparent text-sm border border-black py-1 px-2 rounded-r-2xl rounded-l-2xl focus:outline-none"
               optionClassName="text-xs"
             />
           </div>

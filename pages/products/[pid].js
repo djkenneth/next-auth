@@ -13,11 +13,12 @@ import { Text } from "../../components/global";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import RelatedItems from "../../components/Product/RelatedItems";
 
 const Product = () => {
   return (
-    <div className="container mx-auto">
-      <div>
+    <div className="container mx-auto mt-10">
+      <div className="mb-5">
         <Text
           text="Nvision N190HD 19 / N185HD 18.5 / N200HD 20
           / V190H 19 Monitor 60hz, | HDMI | VGA | LED Display"
@@ -55,6 +56,9 @@ const Product = () => {
             <ProductReview />
           </div>
         </div>
+      </div>
+      <div className="pt-12">
+        <RelatedItems />
       </div>
     </div>
   );

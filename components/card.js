@@ -13,18 +13,20 @@ const Card = ({ product }) => {
     });
   };
   return (
-    <div onClick={handleClick} className="group shadow-md shadow-gray-300 w-60">
+    <div onClick={handleClick} className="group shadow-md shadow-gray-300 w-56">
       <div className="flex justify-center justify-items-center p-1 relative">
         <div className="absolute top-3 right-3 z-10 bg-gray-300 p-1 rounded">
           <FaHeart size={20} />
         </div>
-        <Image
-          src={product.image}
-          alt="Product Item"
-          width={230}
-          height={200}
-          className="bg-slate-800"
-        />
+        <div className="py-1">
+          <Image
+            src={product.image}
+            alt="Product Item"
+            width={150}
+            height={150}
+            className="bg-slate-800"
+          />
+        </div>
         <div className="hidden group-hover:block absolute bottom-0">
           <button className="flex justify-center border-[1px] text-xs font-bold  py-1 px-2 bg-amber-500 rounded-lg border-gray-700">
             <FaShoppingCart size={20} className="mr-2" />
@@ -33,7 +35,9 @@ const Card = ({ product }) => {
         </div>
       </div>
       <div className="bg-gray-50 p-2">
-        <h1 className="text-sm font-bold text-amber-500 mb-2 line-clamp-1">{product.name}</h1>
+        <h1 className="text-sm text-center font-bold text-amber-500 mb-2 line-clamp-1">
+          {product.name}
+        </h1>
         <p className="text-[12px] text-gray-800 font-medium text-center mb-2">{product.brand}</p>
         <h1 className="text-xl text-center font-normal mb-2">₱{product.price}</h1>
       </div>

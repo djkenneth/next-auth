@@ -8,7 +8,19 @@ import { Button, Heading, Text } from "../global";
 
 const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
+  // const [number, setNumber] = useState(0);
+  // const [loading, setLoading] = useState(false);
 
+  // useLayoutEffect(() => {
+  //   setNumber(5);
+  //   setLoading(true);
+  // }, [number]);
+
+  // useEffect(() => {
+  //   if (loading) {
+  //     console.log(number);
+  //   }
+  // }, [loading, number]);
   return (
     <>
       <Text
