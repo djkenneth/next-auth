@@ -14,7 +14,7 @@ import CoreLayout from "../components/layout";
 function MyApp({ Component, pageProps }) {
   return (
     <CoreLayout>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </CoreLayout>
   );
 }

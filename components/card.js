@@ -28,14 +28,14 @@ const Card = ({ product }) => {
           />
         </div>
         <div className="hidden group-hover:block absolute bottom-0">
-          <button className="flex justify-center border-[1px] text-xs font-bold  py-1 px-2 bg-amber-500 rounded-lg border-gray-700">
+          <button className="flex justify-center border-[1px] text-xs font-bold  py-1 px-2 bg-vivid-orange rounded-lg border-gray-700">
             <FaShoppingCart size={20} className="mr-2" />
             <span className="text-gray-900">ADD TO CART</span>
           </button>
         </div>
       </div>
       <div className="bg-gray-50 p-2">
-        <h1 className="text-sm text-center font-bold text-amber-500 mb-2 line-clamp-1">
+        <h1 className="text-sm text-center font-bold text-vivid-orange mb-2 line-clamp-1">
           {product.name}
         </h1>
         <p className="text-[12px] text-gray-800 font-medium text-center mb-2">{product.brand}</p>

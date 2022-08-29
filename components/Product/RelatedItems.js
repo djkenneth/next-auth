@@ -13,13 +13,12 @@ import "swiper/css/navigation";
 const RelatedItems = () => {
   return (
     <>
-      <Heading text="Related Items" className="flex justify-center text-lg font-semibold mb-4" />
+      <Heading className="flex justify-center text-lg font-semibold mb-4">Related Items</Heading>
       <div className="flex border-b-2">
-        <Text
-          text="Overview"
-          className="text-base mr-6 pb-3 font-bold border-b-2 border-yellow-400 pointer-events-none"
-        />
-        <Text text="Description" className="text-base mr-6 pb-3 pointer-events-none" />
+        <Text className="text-base mr-6 pb-3 font-bold border-b-2 border-vivid-yellow pointer-events-none">
+          Overview
+        </Text>
+        <Text className="text-base mr-6 pb-3 pointer-events-none">Description</Text>
       </div>
       <div>
         {/* <ProductCard /> */}

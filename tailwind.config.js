@@ -9,7 +9,14 @@ module.exports = {
       // "helvetica-medium": ["HelveticaNeue Medium", "Helvetica Neue Medium"],
       // "helvetica-bold": ["HelveticaNeue Bold", "Helvetica Neue Bold"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        black: "#181818",
+        "vivid-yellow": "#facc15",
+        "vivid-orange": "#fca311",
+        "dark-blue": "#14213d",
+      },
+    },
   },
   variants: {
     extend: {},

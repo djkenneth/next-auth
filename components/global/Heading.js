@@ -1,11 +1,11 @@
 import React from "react";
 
-const HeadingText = ({ text, className, customContainerStyle }) => {
+const Heading = ({ children, className, customContainerStyle }) => {
   return (
     <div className={`${customContainerStyle}`}>
-      <h1 className={`${className}`}>{text}</h1>
+      <h1 className={`${className}`}>{children}</h1>
     </div>
   );
 };
 
-export default HeadingText;
+export default Heading;

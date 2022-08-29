@@ -7,52 +7,52 @@ const ProductReview = () => {
   const [isQuestion, setIsQuestion] = useState(false);
   return (
     <div className="mb-8">
-      <Heading text="Customer Reviews" className="text-lg font-semibold mb-4" />
+      <Heading className="text-lg font-semibold mb-4">Customer Reviews</Heading>
       <div className="grid grid-cols-4">
         <div className="">
           <ReactStars size={20} value={5} edit={false} />
-          <Text text="Based on 40 reviews" className="text-sm font-medium" />
+          <Text className="text-sm font-medium">Based on 40 reviews</Text>
         </div>
         <div className="col-span-2">
           <div className="flex items-center">
             <ReactStars size={20} value={5} edit={false} />
             <div className="relative border-2 h-5 w-32 mx-2">
-              <div className="bg-yellow-400 h-4" style={{ width: "100%" }}></div>
+              <div className="bg-vivid-yellow h-4" style={{ width: "100%" }}></div>
             </div>
-            <Text text="100%" className="text-sm mr-2" />
-            <Text text="(40)" className="text-sm" />
+            <Text className="text-sm mr-2">100%</Text>
+            <Text className="text-sm">(40)</Text>
           </div>
           <div className="flex items-center">
             <ReactStars size={20} value={4} edit={false} />
             <div className="relative border-2 h-5 w-32 mx-2">
-              <div className="bg-yellow-400 h-4" style={{ width: "80%" }}></div>
+              <div className="bg-vivid-yellow h-4" style={{ width: "80%" }}></div>
             </div>
-            <Text text="80%" className="text-sm mr-2" />
-            <Text text="(40)" className="text-sm" />
+            <Text className="text-sm mr-2">80%</Text>
+            <Text className="text-sm">(40)</Text>
           </div>
           <div className="flex items-center">
             <ReactStars size={20} value={3} edit={false} />
             <div className="relative border-2 h-5 w-32 mx-2">
-              <div className="bg-yellow-400 h-4" style={{ width: "60%" }}></div>
+              <div className="bg-vivid-yellow h-4" style={{ width: "60%" }}></div>
             </div>
-            <Text text="60%" className="text-sm mr-2" />
-            <Text text="(40)" className="text-sm" />
+            <Text className="text-sm mr-2">60%</Text>
+            <Text className="text-sm">(40)</Text>
           </div>
           <div className="flex items-center">
             <ReactStars size={20} value={2} edit={false} />
             <div className="relative border-2 h-5 w-32 mx-2">
-              <div className="bg-yellow-400 h-4" style={{ width: "40%" }}></div>
+              <div className="bg-vivid-yellow h-4" style={{ width: "40%" }}></div>
             </div>
-            <Text text="40%" className="text-sm mr-2" />
-            <Text text="(40)" className="text-sm" />
+            <Text className="text-sm mr-2">40%</Text>
+            <Text className="text-sm">(40)</Text>
           </div>
           <div className="flex items-center">
             <ReactStars size={20} value={1} edit={false} />
             <div className="relative border-2 h-5 w-32 mx-2">
-              <div className="bg-yellow-400 h-4" style={{ width: "20%" }}></div>
+              <div className="bg-vivid-yellow h-4" style={{ width: "20%" }}></div>
             </div>
-            <Text text="20%" className="text-sm mr-2" />
-            <Text text="(40)" className="text-sm" />
+            <Text className="text-sm mr-2">20%</Text>
+            <Text className="text-sm">(40)</Text>
           </div>
         </div>
         <div className="flex flex-col justify-between items-center">
@@ -143,12 +143,15 @@ const ProductReview = () => {
             <div>
               <div className="flex items-center">
                 <ReactStars size={20} value={2} edit={false} classNames="mr-2" />
-                <Text text="10/29/2021" className="text-sm" />
+                <Text className="text-sm">10/29/2021</Text>
               </div>
-              <Text text="Kenneth" className="font-bold text-gray-900" />
+              <Text className="font-bold text-gray-900">Kenneth</Text>
             </div>
           </div>
-          <Text text="receive the keyboard and working fine also RGB light was good maayos naman at walang problema sa keyboard maraming salamat easypc" />
+          <Text>
+            receive the keyboard and working fine also RGB light was good maayos naman at walang
+            problema sa keyboard maraming salamat easypc
+          </Text>
         </div>
       </div>
     </div>

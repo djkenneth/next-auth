@@ -19,11 +19,10 @@ const Product = () => {
   return (
     <div className="container mx-auto mt-10">
       <div className="mb-5">
-        <Text
-          text="Nvision N190HD 19 / N185HD 18.5 / N200HD 20
-          / V190H 19 Monitor 60hz, | HDMI | VGA | LED Display"
-          className="text-sm"
-        />
+        <Text className="text-sm">
+          Nvision N190HD 19 / N185HD 18.5 / N200HD 20 / V190H 19 Monitor 60hz, | HDMI | VGA | LED
+          Display
+        </Text>
       </div>
       <div className="grid grid-cols-12">
         <div className="col-span-9 grid grid-cols-12">
@@ -43,12 +42,11 @@ const Product = () => {
       <div className="grid grid-cols-12">
         <div className="col-span-9">
           <div className="flex pl-10">
-            <Text
-              text="Overview"
-              className="text-lg mr-6 pb-3 font-bold border-b-2 border-yellow-400 pointer-events-none"
-            />
-            <Text text="Description" className="text-lg mr-6 pb-3 pointer-events-none" />
-            <Text text="Reviews" className="text-lg pb-3 pointer-events-none" />
+            <Text className="text-lg mr-6 pb-3 font-bold border-b-2 border-vivid-yellow pointer-events-none">
+              Overview
+            </Text>
+            <Text className="text-lg mr-6 pb-3 pointer-events-none">Description</Text>
+            <Text className="text-lg pb-3 pointer-events-none">Reviews</Text>
           </div>
           <div className="border-2 rounded-lg p-5">
             <ProductOverview />

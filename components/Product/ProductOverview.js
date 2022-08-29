@@ -5,27 +5,29 @@ import { Heading, Text } from "../global";
 const ProductOverview = () => {
   return (
     <div className="mb-8">
-      <Heading
-        text="Rakk Ilis Outemu Red/Blue PBT Keycaps Mechanical, Removable customizable magnetic Cover RGB Gaming Keyboard"
-        className="text-xl font-semibold mb-8"
-      />
+      <Heading className="text-xl font-semibold mb-8">
+        Rakk Ilis Outemu Red/Blue PBT Keycaps Mechanical, Removable customizable magnetic Cover RGB
+        Gaming Keyboard
+      </Heading>
       <div>
         <ul>
           <li className="flex border-b-2 py-1 hover:bg-gray-200">
-            <Text text="Brand" className="font-semibold ml-5" customContainerStyle="w-1/4" />
-            <Text text="RAKK" customContainerStyle="w-3/4" />
+            <Text className="font-semibold ml-5" customContainerStyle="w-1/4">
+              Brand
+            </Text>
+            <Text customContainerStyle="w-3/4">RAKK</Text>
           </li>
           <li className="flex border-b-2 py-1 hover:bg-gray-200">
-            <Text text="Model" className="font-semibold ml-5" customContainerStyle="w-1/4" />
-            <Text text="Ilis" customContainerStyle="w-3/4" />
+            <Text className="font-semibold ml-5" customContainerStyle="w-1/4">
+              Model
+            </Text>
+            <Text customContainerStyle="w-3/4">Ilis</Text>
           </li>
           <li className="flex border-b-2 py-1 hover:bg-gray-200">
-            <Text
-              text="Keyboard Interface"
-              className="font-semibold ml-5"
-              customContainerStyle="w-1/4"
-            />
-            <Text text="USB" customContainerStyle="w-3/4" />
+            <Text className="font-semibold ml-5" customContainerStyle="w-1/4">
+              Keyboard Interface
+            </Text>
+            <Text customContainerStyle="w-3/4">USB</Text>
           </li>
         </ul>
       </div>
