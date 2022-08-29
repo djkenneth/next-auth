@@ -5,6 +5,7 @@ const products = [
     description:
       "Free your creativity! Even demanding tasks like editing home videos and compiling photo albums are easy with the Aspire T Series’ new-generation performance and easy expandability.",
     price: 36995,
+    discounted_price: 40995,
     brand: "ASROCK",
     image: "http://res.cloudinary.com/deiecmpac/image/upload/v1575553061/mlugiouejvzbb0lhfi7e.jpg",
     category: ["Computers", "Desktop pc"],
@@ -30,6 +31,7 @@ const products = [
     description:
       "A complete mini PC built with a quad-core Intel® Celeron® processor, featuring cost-efficient Intel-level performance.",
     price: 8495,
+    discounted_price: 0,
     brand: "ASROCK",
     image: "https://res.cloudinary.com/deiecmpac/image/upload/v1575553538/pvxxxdvjgbf0bdmhg2s6.jpg",
     category: ["Computers", "Mini pc"],
@@ -42,6 +44,7 @@ const products = [
     description:
       "Small but powerful mini PC is designed for vivid entertainment and casual gaming, digital signage, and the workplace.",
     price: 16550,
+    discounted_price: 20995,
     brand: "ASROCK",
     image: "https://res.cloudinary.com/deiecmpac/image/upload/v1575554533/htbw6azc6xit6ifvjlvu.jpg",
     category: ["Computers", "Mini pc"],
@@ -54,6 +57,7 @@ const products = [
     description:
       "With Windows 10 Pro, you’ve got a great business partner. It has all the features of Windows 10 Home, plus important business functionality for encryption, remote log-in, creating virtual machines, and more. Get fast start-ups, a familiar yet expanded Start menu, and great new ways to get stuff done, plus innovative features like an all-new browser built for online action.",
     price: 12400,
+    discounted_price: 15995,
     brand: "ASROCK",
     image: "http://res.cloudinary.com/deiecmpac/image/upload/v1575256402/xcltu5pxdpucwlwyabxv.jpg",
     category: ["Computers", "Software"],
@@ -66,8 +70,10 @@ const products = [
     description:
       "Whatever you do online – on your PC, Mac & Android devices – our advanced, one-license security suite helps protect you from malware, webcam spies, financial scammers & more.",
     price: 2695,
+    discounted_price: 5995,
     brand: "ASROCK",
     image: "http://res.cloudinary.com/deiecmpac/image/upload/v1575555787/d0sqmtzbpmm9fwqqz77x.jpg",
+    slug: "kaspersky-internet-security-2019-devices-2-years-protection",
     category: ["Computers", "Software"],
   },
   {
@@ -76,8 +82,10 @@ const products = [
     description:
       "For families and small businesses who want classic Office apps and email installed on one PC or Mac for use at home or work. Classic versions of Office apps including Word, Excel, PowerPoint. OneNote for Windows 10.",
     price: 14500,
+    discounted_price: 16995,
     brand: "ASROCK",
     image: "http://res.cloudinary.com/deiecmpac/image/upload/v1575556188/yful95tirpm0qosl9cn9.jpg",
+    slug: "office-home-&-business-2019-for-pc-or-mac",
     category: ["Computers", "Software"],
   },
   {
@@ -85,8 +93,10 @@ const products = [
     name: "AMD Ryzen 5 3600X",
     description: "Serious High-Definition Gaming Everyone deserves a powerful processor.",
     price: 14200,
+    discounted_price: 18995,
     brand: "ASROCK",
     image: "http://res.cloudinary.com/deiecmpac/image/upload/v1575007788/skmhcv5dvvddrxjqra7b.jpg",
+    slug: "amd-ryzen-5-3600x",
     category: ["Components", "Processor"],
   },
   {
@@ -95,8 +105,10 @@ const products = [
     description:
       "Higher speeds. More memory. Wider bandwidth. You must push every lever, squeeze every ounce, and leave nothing on the table. AMD’s 3rd Gen Ryzen™ processor was designed to break expectations and set a new standard for high-performance processors.",
     price: 28900,
+    discounted_price: 25995,
     brand: "ASROCK",
     image: "http://res.cloudinary.com/deiecmpac/image/upload/v1575008287/ri8gdpketadqr78jcmpm.jpg",
+    slug: "amd-ryzen-9-3900x-processor",
     category: ["Components", "Processor"],
   },
   {
@@ -105,8 +117,10 @@ const products = [
     description:
       "FOR BUNDLING ONLY: This processor must be bought together with any compatible motherboard.",
     price: 28900,
+    discounted_price: 30995,
     brand: "ASROCK",
     image: "http://res.cloudinary.com/deiecmpac/image/upload/v1575008611/rfb7vwbybsnwgzhilukp.jpg",
+    slug: "amd-a6-7480-dual-core",
     category: ["Components", "Processor"],
   },
   //   {
