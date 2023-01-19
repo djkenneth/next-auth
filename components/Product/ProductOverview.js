@@ -35,8 +35,8 @@ const ProductOverview = () => {
         <Image
           src="https://cdn.shopify.com/s/files/1/0101/4864/2879/products/3366-website.jpg?v=1635221096"
           alt="Banner"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           sizes="50vh"
           // className="h-98 w-full absolute top-0 left-0"
         />

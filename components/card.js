@@ -32,7 +32,7 @@ const Card = ({ product }) => {
           <Image
             src={product.image}
             alt="Product Item"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
             width={200}
             height={200}
             className="bg-slate-800"

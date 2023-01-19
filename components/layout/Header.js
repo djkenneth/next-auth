@@ -139,8 +139,8 @@ function Header() {
                           priority
                           src={category.image}
                           alt="Menu Banner"
-                          layout="fill"
-                          objectFit="cover"
+                          fill
+                          style={{ objectFit: "cover" }}
                         />
                       </div>
                       <div>

@@ -46,11 +46,11 @@ const Footer = () => {
             </Text>
             <Text className="text-sm flex items-center mb-4">
               <AiOutlineClockCircle size={25} className="text-vivid-orange mr-2" />
-              <div>
+              <>
                 <span>Mon - Sat: 9AM to 7PM</span>
                 <br />
                 <span>Sun: 9AM to 5PM</span>
-              </div>
+              </>
             </Text>
           </div>
           <div>

@@ -13,7 +13,6 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 // Components
 // import Card from "../components/card";
 import Tabs from "../components/Tabs";
-// import { Text } from "../components/global";
 
 // Import Swiper styles
 import "swiper/css";
@@ -105,53 +104,6 @@ export default function Home() {
             })}
           </Swiper>
         </div>
-
-        {/* <div className="container mx-auto grid grid-cols-3 gap-4">
-          <div className="col-span-1">
-            <div className="border-2 rounded-3xl border-vivid-orange p-4 flex flex-col justify-center">
-              <div className="flex justify-between items-center">
-                  <Text className="text-2xl">Special Offer</Text>
-                  <div className="rounded-full bg-vivid-yellow w-20 h-20 flex flex-col justify-center items-center">
-                    <Text className="text-xs">Save</Text>
-                    <Text className="text-xl font-bold">30%</Text>
-                  </div>
-              </div>
-              <Image 
-                src="https://cdn.shopify.com/s/files/1/0265/3493/6627/products/game-1.png?v=1649392653&width=540"
-                alt="Product Item"
-                objectFit="cover"
-                width={380}
-                height={380} 
-              />
-              <div>
-                <Text>Black Fashion Zapda</Text>
-                <div>
-                  <Text>$350.00</Text>
-                  <Text>$500.00</Text>
-                </div>
-                <div>
-                  <Text>Already Sold: 6</Text>
-                  <Text>Available: 40</Text>
-                </div>
-                <div className="relative rounded-full h-5 w-100 bg-gray-100">
-                  <div className="bg-vivid-yellow h-5 rounded-full" style={{ width: "30%" }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-2">
-            <Tabs color="slate" />
-          </div>
-        </div> */}
-
-        {/* <div className="container mx-auto py-4">
-          <h1 className="text-3xl font-bold">Components</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-4">
-            {products.map((product) => {
-              return <Card key={product.id} product={product} />;
-            })}
-          </div>
-        </div> */}
       </div>
     </div>
   );
