@@ -21,5 +21,12 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("tailwind-scrollbar-hide"),
+    require("tailwind-scrollbar"),
+    require("tailwindcss-scoped-groups")({
+      groups: ["one", "two"],
+    }),
+  ],
 };

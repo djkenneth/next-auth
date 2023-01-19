@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
+import Image from "next/image";
 
 // import { BsFillEyeFill } from "react-icons/bs";
 // Import Swiper React components
@@ -7,26 +8,46 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-import products from "../data";
+// import products from "../data";
 
 // Components
-import Card from "../components/card";
+// import Card from "../components/card";
+import Tabs from "../components/Tabs";
+// import { Text } from "../components/global";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function Home() {
-  const bannerImg = [
-    "/assets/images/Banners/Banner1.jpg",
-    "/assets/images/Banners/Banner2.jpg",
-    "/assets/images/Banners/Banner3.jpg",
-    "/assets/images/Banners/Banner4.jpg",
-    "/assets/images/Banners/Banner5.jpg",
-    "/assets/images/Banners/Banner6.jpg",
-  ];
+const brandLogos = [
+  "/assets/images/BrandLogos/acer.webp",
+  "/assets/images/BrandLogos/amd.webp",
+  "/assets/images/BrandLogos/brother.webp",
+  "/assets/images/BrandLogos/canon.webp",
+  "/assets/images/BrandLogos/dell.webp",
+  "/assets/images/BrandLogos/dlink.webp",
+  "/assets/images/BrandLogos/epson.webp",
+  "/assets/images/BrandLogos/gigabyte.webp",
+  "/assets/images/BrandLogos/hp.webp",
+  "/assets/images/BrandLogos/huawei.webp",
+  "/assets/images/BrandLogos/intel.webp",
+  "/assets/images/BrandLogos/kingston.webp",
+  "/assets/images/BrandLogos/logitech.webp",
+  "/assets/images/BrandLogos/microsoft.webp",
+  "/assets/images/BrandLogos/msi.webp",
+];
 
+const bannerImg = [
+  "/assets/images/Banners/Banner1.jpg",
+  "/assets/images/Banners/Banner2.jpg",
+  "/assets/images/Banners/Banner3.jpg",
+  "/assets/images/Banners/Banner4.jpg",
+  "/assets/images/Banners/Banner5.jpg",
+  "/assets/images/Banners/Banner6.jpg",
+];
+
+export default function Home() {
   return (
     <div>
       <Head>
@@ -43,9 +64,6 @@ export default function Home() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
@@ -58,14 +76,82 @@ export default function Home() {
             );
           })}
         </Swiper>
-        <div className="container mx-auto py-4">
+
+        <div className="container relative mx-auto py-4">
+          <Tabs categoryName="Computers" list={["Desktop PC", "Notebooks", "Software"]} />
+          <Tabs
+            categoryName="Components"
+            list={["Processor", "Motherboard", "Graphics Card", "Memory"]}
+          />
+        </div>
+
+        <div className="container relative mx-auto py-4">
+          <Swiper
+            slidesPerView={7}
+            spaceBetween={50}
+            slidesPerGroup={1}
+            loop={true}
+            loopFillGroupWithBlank={true}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            style={{ height: "200px" }}
+          >
+            {brandLogos.map((logo, i) => {
+              return (
+                <SwiperSlide key={i} className="flex justify-center items-center select-none">
+                  <Image priority width={100} height={100} src={logo} alt="logo" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+
+        {/* <div className="container mx-auto grid grid-cols-3 gap-4">
+          <div className="col-span-1">
+            <div className="border-2 rounded-3xl border-vivid-orange p-4 flex flex-col justify-center">
+              <div className="flex justify-between items-center">
+                  <Text className="text-2xl">Special Offer</Text>
+                  <div className="rounded-full bg-vivid-yellow w-20 h-20 flex flex-col justify-center items-center">
+                    <Text className="text-xs">Save</Text>
+                    <Text className="text-xl font-bold">30%</Text>
+                  </div>
+              </div>
+              <Image 
+                src="https://cdn.shopify.com/s/files/1/0265/3493/6627/products/game-1.png?v=1649392653&width=540"
+                alt="Product Item"
+                objectFit="cover"
+                width={380}
+                height={380} 
+              />
+              <div>
+                <Text>Black Fashion Zapda</Text>
+                <div>
+                  <Text>$350.00</Text>
+                  <Text>$500.00</Text>
+                </div>
+                <div>
+                  <Text>Already Sold: 6</Text>
+                  <Text>Available: 40</Text>
+                </div>
+                <div className="relative rounded-full h-5 w-100 bg-gray-100">
+                  <div className="bg-vivid-yellow h-5 rounded-full" style={{ width: "30%" }}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2">
+            <Tabs color="slate" />
+          </div>
+        </div> */}
+
+        {/* <div className="container mx-auto py-4">
           <h1 className="text-3xl font-bold">Components</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-4">
             {products.map((product) => {
               return <Card key={product.id} product={product} />;
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

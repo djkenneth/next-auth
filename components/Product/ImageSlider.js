@@ -28,7 +28,7 @@ const ImageSlider = () => {
           return (
             <SwiperSlide key={i}>
               <div className="flex justify-center align-middle">
-                <Image src={img} alt="Banner" width="350" height="350" />
+                <Image src={img} blurDataURL={img} alt="Banner" width="350" height="350" />
               </div>
             </SwiperSlide>
           );
