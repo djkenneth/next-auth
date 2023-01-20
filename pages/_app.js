@@ -1,7 +1,9 @@
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 import "../styles/globals.scss";
 

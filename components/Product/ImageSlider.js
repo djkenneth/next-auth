@@ -20,13 +20,13 @@ const ImageSlider = () => {
         loop={true}
         spaceBetween={10}
         navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
+        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
         {bannerImg.map((img, i) => {
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} className="select-none">
               <div className="flex justify-center align-middle">
                 <Image src={img} blurDataURL={img} alt="Banner" width="350" height="350" />
               </div>
