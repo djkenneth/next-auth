@@ -27,6 +27,7 @@ const Tabs = ({ categoryName, list }) => {
   return (
     <div className="flex flex-wrap">
       <div className="w-full">
+        {/* TabList */}
         <div className="flex items-center justify-between border-b-2">
           <Heading className="text-2xl font-medium">{categoryName}</Heading>
           <ul className="flex flex-row mb-0 list-none pt-3 pb-4 bg-[#f9fafb]" role="tablist">
@@ -56,9 +57,11 @@ const Tabs = ({ categoryName, list }) => {
             Go to section <HiOutlineChevronRight className="ml-2" />
           </Text>
         </div>
+        {/* TabPanels */}
         <div className="relative flex flex-col min-w-0 break-words bg-[#f9fafb] w-full mb-6 rounded">
           <div className="px-4 py-5 flex-auto">
             <div className="tab-content tab-space">
+              {/* TabPanel */}
               <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                 <div className="group-one relative md:ml-2">
                   <HiOutlineChevronLeft
@@ -83,6 +86,7 @@ const Tabs = ({ categoryName, list }) => {
                   />
                 </div>
               </div>
+              {/* TabPanel */}
               <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                 <div className="group-one relative md:ml-2">
                   <HiOutlineChevronLeft
@@ -107,6 +111,7 @@ const Tabs = ({ categoryName, list }) => {
                   />
                 </div>
               </div>
+              {/* TabPanel */}
               <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                 <div className="group-one relative md:ml-2">
                   <HiOutlineChevronLeft

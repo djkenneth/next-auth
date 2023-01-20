@@ -117,12 +117,12 @@ function Header() {
         </div>
         <div className="bg-vivid-orange">
           <div className="w-10/12 mx-auto">
-            <ul className="flex relative">
+            <ul className="flex relative select-none">
               {categories.map((category, i) => {
                 return (
                   <li
                     key={i}
-                    className="product-category py-3.5 pr-3.5 pl-4 font-medium flex items-center hover:bg-black group"
+                    className="product-category py-3.5 pr-3.5 pl-4 font-medium flex items-center hover:bg-black group cursor-pointer "
                   >
                     <span className="pr-2.5 group-hover:text-vivid-orange">{category.name}</span>
                     <MdKeyboardArrowDown
@@ -149,7 +149,7 @@ function Header() {
                             return (
                               <li
                                 key={i}
-                                className="p-3 text-lg font-bold flex items-center justify-center primary-text-shadow"
+                                className="p-3 text-lg font-bold flex items-center justify-center primary-text-shadow cursor-pointer"
                               >
                                 <MdKeyboardArrowRight size={24} className="text-vivid-orange" />
                                 <span className="">{sub.name}</span>

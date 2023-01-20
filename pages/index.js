@@ -1,23 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
+import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-// import { BsFillEyeFill } from "react-icons/bs";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-// import products from "../data";
-
 // Components
-// import Card from "../components/card";
-import Tabs from "../components/Tabs";
+import ProductSwiper from "../components/Product/ProductSwiper";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../components/global";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import products from "../data";
 
 const brandLogos = [
   "/assets/images/BrandLogos/acer.webp",
@@ -47,6 +41,9 @@ const bannerImg = [
 ];
 
 export default function Home() {
+  const [openTab, setOpenTab] = useState(1);
+  const [openTab2, setOpenTab2] = useState(1);
+
   return (
     <div>
       <Head>
@@ -69,7 +66,7 @@ export default function Home() {
         >
           {bannerImg.map((img, i) => {
             return (
-              <SwiperSlide key={i}>
+              <SwiperSlide key={i} className="select-none">
                 <img src={img} alt="Banner" width="100%" />
               </SwiperSlide>
             );
@@ -77,11 +74,61 @@ export default function Home() {
         </Swiper>
 
         <div className="container relative mx-auto py-4">
-          <Tabs categoryName="Computers" list={["Desktop PC", "Notebooks", "Software"]} />
-          <Tabs
-            categoryName="Components"
-            list={["Processor", "Motherboard", "Graphics Card", "Memory"]}
-          />
+          <Tabs>
+            <TabList categoryName="Computers">
+              <Tab index={1} active={openTab} setOpenTab={setOpenTab}>
+                Desktop PC
+              </Tab>
+              <Tab index={2} active={openTab} setOpenTab={setOpenTab}>
+                Notebooks
+              </Tab>
+              <Tab index={3} active={openTab} setOpenTab={setOpenTab}>
+                Software
+              </Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel index={1} openTab={openTab}>
+                <ProductSwiper products={products} />
+              </TabPanel>
+              <TabPanel index={2} openTab={openTab}>
+                Notebooks asdasds
+              </TabPanel>
+              <TabPanel index={3} openTab={openTab}>
+                <ProductSwiper products={products} />
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+
+          <Tabs>
+            <TabList categoryName="Components">
+              <Tab index={1} active={openTab2} setOpenTab={setOpenTab2}>
+                Processor
+              </Tab>
+              <Tab index={2} active={openTab2} setOpenTab={setOpenTab2}>
+                Motherboard
+              </Tab>
+              <Tab index={3} active={openTab2} setOpenTab={setOpenTab2}>
+                Graphics Card
+              </Tab>
+              <Tab index={4} active={openTab2} setOpenTab={setOpenTab2}>
+                Memory
+              </Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel index={1} openTab={openTab2}>
+                <ProductSwiper products={products} />
+              </TabPanel>
+              <TabPanel index={2} openTab={openTab2}>
+                Notebooks asdasds
+              </TabPanel>
+              <TabPanel index={3} openTab={openTab2}>
+                <ProductSwiper products={products} />
+              </TabPanel>
+              <TabPanel index={4} openTab={openTab2}>
+                Memory
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </div>
 
         <div className="container relative mx-auto py-4">
