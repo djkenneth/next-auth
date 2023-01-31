@@ -1,6 +1,9 @@
 import React from "react";
 
-const Text = ({ children, className, customContainerStyle, onClick }) => {
+// Types
+import { IText } from '@/types'
+
+const Text = ({ children, className, customContainerStyle, onClick }: IText) => {
   return (
     <div className={`${customContainerStyle}`}>
       <p className={`${className}`} onClick={onClick}>

@@ -11,7 +11,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import ProductSwiper from "../components/Product/ProductSwiper";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../components/global";
 
-import products from "../data";
+import products from "../../data";
 
 const brandLogos = [
   "/assets/images/BrandLogos/acer.webp",

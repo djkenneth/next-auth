@@ -1,6 +1,9 @@
 import React from "react";
 
-const Tab = ({ children, active, index, setOpenTab, props }) => {
+// Types
+import { ITab } from '@/types'
+
+const Tab = ({ children, active, index, setOpenTab, ...rest }: ITab) => {
   return (
     <li className="-mb-px mr-2 last:mr-0 text-center cursor-pointer">
       <a
@@ -15,7 +18,7 @@ const Tab = ({ children, active, index, setOpenTab, props }) => {
         data-toggle="tab"
         role="tablist"
         href={`#link${index}`}
-        {...props}
+        {...rest}
       >
         {children}
       </a>

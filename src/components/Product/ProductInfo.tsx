@@ -6,6 +6,8 @@ import { FaCartArrowDown } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 import { Button, Heading, Text } from "../global";
 
+
+
 const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
   // const [number, setNumber] = useState(0);
@@ -67,7 +69,7 @@ const ProductInfo = () => {
           <input
             type="number"
             value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+            onChange={(e: any) => setQuantity(e.target.value)}
             className="h-7 border-none w-full focus:outline-none"
           />
           <div className="flex">

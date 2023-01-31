@@ -3,7 +3,7 @@ import { Heading, Text } from "./global";
 // icons
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 
-import products from "../data";
+import products from "../../data";
 import Card from "./card";
 
 const Tabs = ({ categoryName, list }) => {

@@ -1,6 +1,9 @@
 import React from "react";
 
-const Button = ({ onClick, icon, text, bgColor, textColor, custonStyle }) => {
+// Types
+import { IButton } from '@/types'
+
+const Button = ({ onClick, icon, text, bgColor, textColor, custonStyle }: IButton) => {
   return (
     <button
       onClick={onClick}

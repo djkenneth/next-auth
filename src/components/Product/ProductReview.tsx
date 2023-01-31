@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Heading, Text } from "../global";
+import { Button, Heading, Text } from "../global/index.tsx";
 import ReactStars from "react-rating-stars-component";
 import Select from "../global/Select";
 

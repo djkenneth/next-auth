@@ -2,7 +2,7 @@ import React from "react";
 import { Heading, Text } from "../global";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import products from "../../data";
+import products from "../../../data";
 import Card from "../card";
 
 // Import Swiper styles

@@ -1,6 +1,9 @@
 import React from "react";
 
-const Heading = ({ children, className, customContainerStyle }) => {
+// Types
+import { IHeading } from '@/types'
+
+const Heading = ({ children, className, customContainerStyle }: IHeading) => {
   return (
     <div className={`${customContainerStyle}`}>
       <h1 className={`${className}`}>{children}</h1>

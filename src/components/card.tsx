@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Heading, Text } from "./global";
+import { Heading, Text } from "./global/index";
 import { useRouter } from "next/router";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";

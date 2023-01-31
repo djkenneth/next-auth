@@ -8,10 +8,20 @@ import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { BiMinus } from "react-icons/bi";
 
+import COMPUTER from '../../../public/assets/images/Menus/ComputerMenuBanner.jpg'
+import COMPONENTS from '../../../public/assets/images/Menus/ComponentMenuBanner.jpg'
+import PERIPERALS from '../../../public/assets/images/Menus/ComputerMenuBanner.jpg'
+import NETDEVICES from '../../../public/assets/images/Menus/NetDevicesMenuBanner.jpg'
+import ACCESSORIES from '../../../public/assets/images/Menus/AccessoriesMenuBanner.jpg'
+import GADGETS from '../../../public/assets/images/Menus/GadgetsMenuBanner.jpg'
+
+
+
+
 const categories = [
   {
     name: "COMPUTER",
-    image: "/assets/images/Menus/ComputerMenuBanner.jpg",
+    image: COMPUTER,
     subCategory: [
       { name: "Desktop PC" },
       { name: "Notebooks" },
@@ -22,7 +32,7 @@ const categories = [
   },
   {
     name: "COMPONENTS",
-    image: "/assets/images/Menus/ComponentMenuBanner.jpg",
+    image: COMPONENTS,
     subCategory: [
       { name: "Processor" },
       { name: "Motherboard" },
@@ -38,7 +48,7 @@ const categories = [
   },
   {
     name: "PERIPERALS",
-    image: "/assets/images/Menus/PeripheralsMenuBanner.jpg",
+    image: PERIPERALS,
     subCategory: [
       { name: "Displays" },
       { name: "Audio" },
@@ -52,7 +62,7 @@ const categories = [
   },
   {
     name: "NET DEVICES",
-    image: "/assets/images/Menus/NetDevicesMenuBanner.jpg",
+    image: NETDEVICES,
     subCategory: [
       { name: "Access Point/Range Extender" },
       { name: "Adaptor" },
@@ -64,7 +74,7 @@ const categories = [
   },
   {
     name: "ACCESSORIES",
-    image: "/assets/images/Menus/AccessoriesMenuBanner.jpg",
+    image: ACCESSORIES,
     subCategory: [
       { name: "Batteries and Chargers" },
       { name: "Cables" },
@@ -79,7 +89,7 @@ const categories = [
   },
   {
     name: "GADGETS",
-    image: "/assets/images/Menus/GadgetsMenuBanner.jpg",
+    image: GADGETS,
     subCategory: [
       { name: "Digital Camera" },
       { name: "Media Player" },
