@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["src/pages/**/*.{js,ts,jsx,tsx}", "src/components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./node_modules/flowbite-react/**/*.js",
+    "src/pages/**/*.{js,ts,jsx,tsx}",
+    "src/components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
@@ -28,5 +32,6 @@ module.exports = {
     require("tailwindcss-scoped-groups")({
       groups: ["one", "two"],
     }),
+    require("flowbite/plugin"),
   ],
 };

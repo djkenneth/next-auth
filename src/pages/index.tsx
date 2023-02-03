@@ -11,6 +11,8 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import ProductSwiper from "../components/Product/ProductSwiper";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../components/global";
 
+import { Button } from "flowbite-react";
+
 import products from "../../data";
 
 const brandLogos = [
@@ -120,6 +122,9 @@ export default function Home() {
               </TabPanel>
               <TabPanel index={2} openTab={openTab2}>
                 Notebooks asdasds
+                <Button gradientMonochrome="info">
+                  Default
+                </Button>
               </TabPanel>
               <TabPanel index={3} openTab={openTab2}>
                 <ProductSwiper products={products} />
