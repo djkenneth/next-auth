@@ -1,9 +1,5 @@
 module.exports = {
-  content: [
-    "./node_modules/flowbite-react/**/*.js",
-    "src/pages/**/*.{js,ts,jsx,tsx}",
-    "src/components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["src/pages/**/*.{js,ts,jsx,tsx}", "src/components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
@@ -19,6 +15,11 @@ module.exports = {
         "vivid-yellow": "#facc15",
         "vivid-orange": "#fca311",
         "dark-blue": "#14213d",
+        "vivid-orange-300": "#fcb711",
+        "vivid-orange-400": "#fca311",
+        "vivid-orange-500": "#fc8f11",
+        "vivid-orange-600": "#fc7c11",
+        "vivid-orange-700": "#fc6811",
       },
     },
   },

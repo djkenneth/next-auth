@@ -11,8 +11,6 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import ProductSwiper from "../components/Product/ProductSwiper";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../components/global";
 
-import { Button } from "flowbite-react";
-
 import products from "../../data";
 
 const brandLogos = [
@@ -121,10 +119,10 @@ export default function Home() {
                 <ProductSwiper products={products} />
               </TabPanel>
               <TabPanel index={2} openTab={openTab2}>
-                Notebooks asdasds
-                <Button gradientMonochrome="info">
-                  Default
-                </Button>
+                Notebooks
+                
+                <button type="button" className="focus:outline-none text-white bg-vivid-orange-400 hover:bg-vivid-orange-500 focus:ring-4 focus:ring-vivid-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-vivid-orange-700">Orange</button>
+               
               </TabPanel>
               <TabPanel index={3} openTab={openTab2}>
                 <ProductSwiper products={products} />
