@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Button, Heading, Text } from "../global/index.tsx";
+import { Button, Heading, Text, Select } from "@/components/global";
 import ReactStars from "react-rating-stars-component";
-import Select from "../global/Select";
 
 const ProductReview = () => {
   const [isQuestion, setIsQuestion] = useState(false);
@@ -113,10 +112,9 @@ const ProductReview = () => {
               <textarea
                 id="user-message"
                 name="message"
-                type="text"
                 required
-                rows="4"
-                cols="50"
+                rows={4}
+                cols={50}
                 className="appearance-none rounded-lg relative block w-full px-3 py-2 mt-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Write your question here"
               />
