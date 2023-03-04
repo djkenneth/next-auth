@@ -42,7 +42,7 @@
 
 @layer base {
   body {
-    @apply bg-[#f9fafb] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-vivid-orange
+    @apply bg-[#fdfdfd] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-vivid-orange
   }
 }
 
@@ -56,6 +56,10 @@
 
 .primary-text-shadow:hover {
   text-shadow: 2px 3px 1px rgb(245 158 11);
+}
+
+.mySwiper2 {
+  border: 1px solid #dddddd;
 }
 
 .mySwiper3 .swiper-slide {

@@ -9,14 +9,13 @@ import Card from "../card";
 const ProductSwiper = ({ products }) => {
   return (
     <Swiper
-      slidesPerView={5}
+      slidesPerView={4}
       spaceBetween={50}
       slidesPerGroup={1}
       loop={true}
       loopFillGroupWithBlank={true}
       navigation={true}
       modules={[Pagination, Navigation]}
-      // style={{ height: "200px" }}
     >
       {products.map((product) => {
         return (

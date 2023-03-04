@@ -7,22 +7,24 @@ import "swiper/css/thumbs";
 
 import "../styles/globals.scss";
 
-// Components
-import CoreLayout from "../components/layout";
-// import { SessionProvider } from "next-auth/react";
+import { ApolloProvider } from "@apollo/client";
+import { useApollo } from "@/apollo/client";
 
-// function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-//   return (
-//     <SessionProvider session={session}>
-//       <Component {...pageProps} />
-//     </SessionProvider>
-//   );
-// }
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+const queryClient = new QueryClient()
+
 function MyApp({ Component, pageProps }) {
+  const apolloClient = useApollo(pageProps)
+
   return (
-    <CoreLayout>
-      <Component {...pageProps} />
-    </CoreLayout>
+    <ApolloProvider client={apolloClient}>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </ApolloProvider>
   );
 }
 

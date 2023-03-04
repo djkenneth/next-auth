@@ -16,13 +16,13 @@ const Card = ({ product }) => {
   const handleClick = () => {
     router.push({
       pathname: "/products/[pid]",
-      query: { pid: product.slug },
+      query: { pid: product.attributes.slug },
     });
   };
   return (
     <div
       onClick={handleClick}
-      className="group-two shadow-lg shadow-gray-300 border-2 min-w-[18.5rem]"
+      className="group-two shadow-lg shadow-gray-300 border-2 min-w-[15rem] max-w-[16rem]"
     >
       <div className="flex justify-center justify-items-center p-1 relative bg-white">
         <div className="absolute top-3 right-3 z-10 p-1 rounded">
@@ -30,7 +30,7 @@ const Card = ({ product }) => {
         </div>
         <div className="py-1">
           <Image
-            src={product.image}
+            src={product.attributes.image.data[0].attributes.url}
             alt="Product Item"
             style={{
               objectFit: "cover",
@@ -40,7 +40,7 @@ const Card = ({ product }) => {
             }}
             width={200}
             height={200}
-            className="bg-slate-800"
+            // className="bg-slate-800"
           />
         </div>
         <div className="hidden group-two-hover:block absolute bottom-0">
@@ -52,20 +52,20 @@ const Card = ({ product }) => {
       </div>
       <div className="bg-gray-100 text-center p-2 pt-4 min-h-[190px]">
         <Heading className="text-sm font-bold text-vivid-orange mb-2 line-clamp-2">
-          {product.name}
+          {product.attributes.name}
         </Heading>
-        <Text className="text-[12px] text-gray-600 font-semibold mb-2">{product.brand}</Text>
+        {/* <Text className="text-[12px] text-gray-600 font-semibold mb-2">{product.brand}</Text> */}
         <div className="flex justify-center">
           <Heading
             className={`mr-3 text-xl font-medium ${
-              product.discounted_price ? "text-vivid-orange" : "text-black"
+              product.attributes.compare_at_price ? "text-vivid-orange" : "text-black"
             }`}
           >
-            ₱{priceFormatter(product.price)}
+            ₱{priceFormatter(product.attributes.price)}
           </Heading>
-          {(product.discounted_price || product.discounted_price > 0) && (
+          {(product.attributes.compare_at_price || product.attributes.compare_at_price > 0) && (
             <Heading className="text-xl font-medium line-through mb-1">
-              ₱{priceFormatter(product.discounted_price)}
+              ₱{priceFormatter(product.attributes.compare_at_price)}
             </Heading>
           )}
         </div>

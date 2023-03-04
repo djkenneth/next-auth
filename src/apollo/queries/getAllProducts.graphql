@@ -1,0 +1,76 @@
+query getAllProducts($pageSize: Int, $page: Int) {
+  products(pagination: { pageSize: $pageSize, page: $page }) {
+    data {
+      id,
+      attributes {
+        name,
+        price,
+        compare_at_price,
+        rating,
+        details,
+        information,
+        quantity,
+        slug,
+        image {
+          data {
+            id,
+            attributes {
+              name,
+              width,
+              height,
+              url
+            }
+          }
+        },
+        color {
+          data {
+            id,
+            attributes {
+              value
+            }
+          }
+        },
+        brand {
+          data {
+            id,
+            attributes {
+              value
+            }
+          }
+        },
+        category {
+          data {
+            id,
+            attributes {
+              value
+            }
+          }
+        },
+        sub_category {
+          data {
+            id,
+            attributes {
+              value
+            }
+          }
+        },
+        sub_child_category {
+          data {
+            id,
+            attributes {
+              value
+            }
+          }
+        }
+      }
+    },
+    meta {
+      pagination {
+        total,
+        page,
+        pageSize,
+        pageCount
+      }
+    }
+  }
+}

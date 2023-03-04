@@ -6,5 +6,6 @@ import TabList from "./TabList";
 import Tab from "./Tab";
 import TabPanels from "./TabPanels";
 import TabPanel from "./TabPanel";
+import Banner from "./Banner";
 
-export { Button, Heading, Text, Tabs, TabList, Tab, TabPanels, TabPanel };
+export { Button, Heading, Text, Tabs, TabList, Tab, TabPanels, TabPanel, Banner };
