@@ -1,27 +1,21 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import qs from 'qs'
-import axios from 'axios'
+// import qs from 'qs'
+import { initializeApollo } from '@/apollo/client';
+import { GetProductsBySlugDocument } from '__generated__/graphql';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         if (req.method !== 'GET') throw new Error('Invalid request method!')
         const { slug } = req.query;
-        const query = qs.stringify(
-            {
-                filters: {
-                    slug: {
-                        $eq: slug
-                    }
-                },
-                populate: ['image']
-            },
-            {
-                encodeValuesOnly: true
+        const client = initializeApollo()
+        const { data: { products } } = await client.query({
+            query: GetProductsBySlugDocument,
+            variables: {
+                slug
             }
-        )
+        })
 
-        const { data: products } = await axios.get(`${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}/api/products?${query}`)
-        res.send(products.data[0]);
+        res.send(products.data[0])
     } catch (error) {
         console.log(error)
     }

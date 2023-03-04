@@ -1,0 +1,7 @@
+overwrite: true
+schema: "https://strapi-cms-tutorial-production.up.railway.app/graphql"
+documents: "src/apollo/queries/**/*.graphql"
+generates:
+  __generated__/:
+    preset: "client"
+    plugins: []
