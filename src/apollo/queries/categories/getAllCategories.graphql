@@ -1,0 +1,23 @@
+query getCategories {
+  categories {
+    data {
+      attributes {
+        value,
+        sub_categories {
+          data {
+            attributes {
+              value,
+              sub_child_categories {
+                data {
+                  attributes {
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

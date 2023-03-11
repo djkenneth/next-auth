@@ -8,6 +8,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 import { Button, Heading, Text } from "../global";
 import Image from "next/image";
+import { convertToDecimal } from "@/lib/general";
 
 const ProductInfo = ({ productName, productPrice, productIsAvailable, productComparePrice }) => {
   const [quantity, setQuantity] = useState(1);
@@ -55,10 +56,10 @@ const ProductInfo = ({ productName, productPrice, productIsAvailable, productCom
       <div className="flex justify-between mb-5">
         <div className="flex items-baseline">
           <Text className="text-xl text-slate-800 font-semibold line-through mr-2">
-            &#8369;{productComparePrice}
+            &#8369;{convertToDecimal(productComparePrice)}
           </Text>
           <Text className="text-2xl text-vivid-orange font-semibold">
-            &#8369;{productPrice}
+            &#8369;{convertToDecimal(productPrice)}
           </Text>
         </div>
         <div>
