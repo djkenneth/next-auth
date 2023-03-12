@@ -15,7 +15,7 @@ const Card = ({ product }) => {
 
   const handleClick = () => {
     router.push({
-      pathname: "/products/[pid]",
+      pathname: "/shop/[pid]",
       query: { pid: product.attributes.slug },
     });
   };
@@ -40,7 +40,7 @@ const Card = ({ product }) => {
             }}
             width={200}
             height={200}
-            // className="bg-slate-800"
+          // className="bg-slate-800"
           />
         </div>
         <div className="hidden group-two-hover:block absolute bottom-0">
@@ -57,9 +57,8 @@ const Card = ({ product }) => {
         {/* <Text className="text-[12px] text-gray-600 font-semibold mb-2">{product.brand}</Text> */}
         <div className="flex justify-center">
           <Heading
-            className={`mr-3 text-xl font-medium ${
-              product.attributes.compare_at_price ? "text-vivid-orange" : "text-black"
-            }`}
+            className={`mr-3 text-xl font-medium ${product.attributes.compare_at_price ? "text-vivid-orange" : "text-black"
+              }`}
           >
             ₱{priceFormatter(product.attributes.price)}
           </Heading>

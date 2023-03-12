@@ -7,6 +7,7 @@ import { get } from 'lodash'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
+// Components
 import Layout from '@/components/layout'
 import ImageSlider from "@/components/Product/ImageSlider";
 import DeliveryOption from "@/components/Product/DeliveryOption";
@@ -37,7 +38,7 @@ const Product = () => {
     queryFn: () => axios.get(`/api/products/${pid}`)
   })
 
-  if(isLoading) {
+  if (isLoading) {
     return (
       <Layout>
         <h1>...Loading</h1>
@@ -59,11 +60,11 @@ const Product = () => {
               <ImageSlider image={get(products, 'data.attributes.image')} />
             </div>
             <div className="col-span-7 pl-5 pr-12 mb-3">
-              <ProductInfo 
-                productName={get(products, 'data.attributes.name')} 
-                productPrice={get(products, 'data.attributes.price')} 
+              <ProductInfo
+                productName={get(products, 'data.attributes.name')}
+                productPrice={get(products, 'data.attributes.price')}
                 productComparePrice={get(products, 'data.attributes.compare_at_price')}
-                productIsAvailable={get(products, 'data.attributes.quantity')} 
+                productIsAvailable={get(products, 'data.attributes.quantity')}
               />
             </div>
           </div>
@@ -74,7 +75,7 @@ const Product = () => {
           </div> */}
         </div>
         <div>
-            {/* <div className="flex pl-10">
+          {/* <div className="flex pl-10">
               <Text className="text-lg mr-6 pb-3 font-bold border-b-2 border-vivid-yellow pointer-events-none">
                 DETAILS
               </Text>
@@ -87,35 +88,35 @@ const Product = () => {
               <ProductDescription />
               <ProductReview />
             </div> */}
-            <div className="text-sm font-medium text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
-                <ul className="flex flex-wrap -mb-px">
-                    <li className="mr-2">
-                      <a onClick={() => setTab(1)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 1 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>DETAILS</a>
-                    </li>
-                    <li className="mr-2">
-                      <a onClick={() => setTab(2)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 2 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>MORE INFORMATION</a>
-                    </li>
-                    <li className="mr-2">
-                      <a onClick={() => setTab(3)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 3 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>REVIEWS</a>
-                    </li>
-                    <li className="mr-2">
-                      <a onClick={() => setTab(4)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 4 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>RELATED POSTS</a>
-                    </li>
-                </ul>
-                <div>
-                  <div className={tab === 1 ? 'block' : 'hidden'}>
-                    <div className="pl-10">
-                      <ReactMarkdown children={get(products, 'data.attributes.details')} remarkPlugins={[remarkGfm]} />
-                    </div>
-                    
-                  </div>
-                  <div className={tab === 2 ? 'block' : 'hidden'}>
-                    <div className="pl-10">
-                      <ReactMarkdown children={get(products, 'data.attributes.information')} remarkPlugins={[remarkGfm]} />
-                    </div>
-                  </div>
+          <div className="text-sm font-medium text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+            <ul className="flex flex-wrap -mb-px">
+              <li className="mr-2">
+                <a onClick={() => setTab(1)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 1 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>DETAILS</a>
+              </li>
+              <li className="mr-2">
+                <a onClick={() => setTab(2)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 2 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>MORE INFORMATION</a>
+              </li>
+              <li className="mr-2">
+                <a onClick={() => setTab(3)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 3 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>REVIEWS</a>
+              </li>
+              <li className="mr-2">
+                <a onClick={() => setTab(4)} className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${tab === 4 ? 'text-vivid-orange-400 border-vivid-orange-400 active dark:text-vivid-orange-500 dark:border-vivid-orange-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}>RELATED POSTS</a>
+              </li>
+            </ul>
+            <div>
+              <div className={tab === 1 ? 'block' : 'hidden'}>
+                <div className="pl-10">
+                  <ReactMarkdown children={get(products, 'data.attributes.details')} remarkPlugins={[remarkGfm]} />
                 </div>
+
+              </div>
+              <div className={tab === 2 ? 'block' : 'hidden'}>
+                <div className="pl-10">
+                  <ReactMarkdown children={get(products, 'data.attributes.information')} remarkPlugins={[remarkGfm]} />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
         <div className="pt-12">
           {/* <RelatedItems /> */}
