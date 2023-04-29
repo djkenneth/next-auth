@@ -42,7 +42,7 @@ query getProductsBySlug($slug: String!) {
           data {
             id,
             attributes {
-              value
+              name
             }
           }
         },
@@ -50,7 +50,7 @@ query getProductsBySlug($slug: String!) {
           data {
             id,
             attributes {
-              value
+              name
             }
           }
         },
@@ -58,7 +58,7 @@ query getProductsBySlug($slug: String!) {
           data {
             id,
             attributes {
-              value
+              name
             }
           }
         }

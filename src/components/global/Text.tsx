@@ -1,15 +1,16 @@
-import React from "react";
+import React, { HTMLProps, ReactNode } from "react";
 
 // Types
-import { IText } from '@/types'
+interface IText extends HTMLProps<HTMLParagraphElement> {
+  children?: ReactNode,
+  onClick?: () => void
+}
 
-const Text = ({ children, className, customContainerStyle, onClick }: IText) => {
+const Text = ({ children, onClick, ...rest }: IText) => {
   return (
-    <div className={`${customContainerStyle}`}>
-      <p className={`${className}`} onClick={onClick}>
-        {children}
-      </p>
-    </div>
+    <p onClick={onClick} {...rest}>
+      {children}
+    </p>
   );
 };
 

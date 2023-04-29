@@ -9,9 +9,26 @@ export const convertToDecimal = (value: number) => {
     // console.log(typeof newFormat)
     // return newFormat;
 
-    const converPrice = Number(parseFloat(value.toString()).toFixed(2)).toLocaleString('en', {
+    const converPrice = Number(parseFloat(value?.toString()).toFixed(2)).toLocaleString('en', {
         minimumFractionDigits: 2
     });
 
     return converPrice;
+}
+
+/**
+ * A helper function for replace all char in array
+ * @param value
+ */
+export const replaceStringCharInArray = (value: string[]) => {
+    if (value) {
+        const newArr = []
+        for (let i = 0; i < value.length; i++) {
+            const replaceChar = value[i].replaceAll('-', ' ').toUpperCase()
+            newArr.push(replaceChar)
+        }
+
+        return newArr;
+    }
+
 }

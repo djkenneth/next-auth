@@ -1,16 +1,21 @@
-import React from "react";
+import React, { ComponentPropsWithoutRef, ReactNode } from "react";
 
-// Types
-import { IButton } from '@/types'
+interface IButton extends ComponentPropsWithoutRef<"button"> {
+  children?: ReactNode,
+  onClick?: () => void,
+  className?: string;
+  // icon?: ReactElement<any>
+}
 
-const Button = ({ onClick, icon, text, bgColor, textColor, custonStyle }: IButton) => {
+const Button = ({ children, onClick, className, ...props }: IButton) => {
   return (
     <button
+      type="button"
       onClick={onClick}
-      className={`flex items-center ${bgColor} ${textColor} rounded-full font-bold text-sm ${custonStyle}`}
+      className={`py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700`}
+      {...props}
     >
-      {icon}
-      {text}
+      {children}
     </button>
   );
 };

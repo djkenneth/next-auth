@@ -7,5 +7,6 @@ import Tab from "./Tab";
 import TabPanels from "./TabPanels";
 import TabPanel from "./TabPanel";
 import Banner from "./Banner";
+import Alert from "./Alert";
 
-export { Button, Heading, Text, Tabs, TabList, Tab, TabPanels, TabPanel, Banner };
+export { Button, Heading, Text, Tabs, TabList, Tab, TabPanels, TabPanel, Banner, Alert };

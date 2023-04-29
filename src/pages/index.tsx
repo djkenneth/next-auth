@@ -49,7 +49,7 @@ const Home = () => {
   const [openTab, setOpenTab] = useState(1);
   const [openTab2, setOpenTab2] = useState(1);
 
-  const { data: products , isLoading, isSuccess } = useQuery({
+  const { data: products, isLoading, isSuccess } = useQuery({
     queryKey: ['products'],
     queryFn: () => axios.get('/api/products')
   })
@@ -60,7 +60,7 @@ const Home = () => {
         <Banner bannerImg={bannerImg} />
         <div className="container relative mx-auto py-4">
           <Tabs>
-            <TabList categoryName="Computers">
+            <TabList categoryName="Computers Products">
               <Tab index={1} active={openTab} setOpenTab={setOpenTab}>
                 Desktop PC
               </Tab>
@@ -73,46 +73,14 @@ const Home = () => {
             </TabList>
             <TabPanels>
               <TabPanel index={1} openTab={openTab}>
-                { isLoading && <h1>...Loading</h1> }
-                { isSuccess && <ProductSwiper products={products.data.data} /> }
+                {isLoading && <h1>...Loading</h1>}
+                {isSuccess && <ProductSwiper products={products.data.data} />}
               </TabPanel>
               <TabPanel index={2} openTab={openTab}>
-                Notebooks asdasds
+                Notebooks
               </TabPanel>
               <TabPanel index={3} openTab={openTab}>
                 {/* <ProductSwiper products={products} /> */}
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
-
-          <Tabs>
-            <TabList categoryName="Components">
-              <Tab index={1} active={openTab2} setOpenTab={setOpenTab2}>
-                Processor
-              </Tab>
-              <Tab index={2} active={openTab2} setOpenTab={setOpenTab2}>
-                Motherboard
-              </Tab>
-              <Tab index={3} active={openTab2} setOpenTab={setOpenTab2}>
-                Graphics Card
-              </Tab>
-              <Tab index={4} active={openTab2} setOpenTab={setOpenTab2}>
-                Memory
-              </Tab>
-            </TabList>
-            <TabPanels>
-              <TabPanel index={1} openTab={openTab2}>
-                {/* <ProductSwiper products={products} /> */}
-              </TabPanel>
-              <TabPanel index={2} openTab={openTab2}>
-                Notebooks
-                <button type="button" className="focus:outline-none text-white bg-vivid-orange-400 hover:bg-vivid-orange-500 focus:ring-4 focus:ring-vivid-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-vivid-orange-700">Orange</button>
-              </TabPanel>
-              <TabPanel index={3} openTab={openTab2}>
-                {/* <ProductSwiper products={products} /> */}
-              </TabPanel>
-              <TabPanel index={4} openTab={openTab2}>
-                Memory
               </TabPanel>
             </TabPanels>
           </Tabs>

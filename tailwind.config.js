@@ -12,6 +12,11 @@ module.exports = {
     extend: {
       colors: {
         black: "#181818",
+        "red-600": "#e12a27",
+        "dark-gray": "#5b5b5f",
+        "light-gray-500": "#999999",
+        "light-gray-50": "#f4f4f4",
+
         "vivid-yellow": "#facc15",
         "vivid-orange": "#fca311",
         "dark-blue": "#14213d",
@@ -31,7 +36,7 @@ module.exports = {
     require("tailwind-scrollbar-hide"),
     require("tailwind-scrollbar"),
     require("tailwindcss-scoped-groups")({
-      groups: ["one", "two"],
+      groups: ["one", "two", "three"],
     }),
     require("flowbite/plugin"),
   ],

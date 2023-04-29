@@ -108,10 +108,9 @@ function Header() {
     queryFn: () => axios.get('/api/categories')
   })
 
-  const filterCategoryProduct = (category: string) => {
+  const categoryProduct = (category: string) => {
     router.push({
-      pathname: "/product-category/[category]",
-      query: { category: category.toLowerCase() },
+      pathname: `/product-category/${category}`,
     });
   }
 
@@ -130,24 +129,24 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="bg-vivid-orange">
+      <div>
         <div className="w-10/12 mx-auto">
           <ul className="flex relative select-none">
             {categories?.data.map((category, i: number) => {
               return (
                 <li
                   key={i}
-                  className="product-category py-3.5 pr-3.5 pl-4 font-medium flex items-center hover:bg-black group-one cursor-pointer "
+                  className="product-category py-3.5 pr-3.5 pl-4 font-medium flex items-center group-one cursor-pointer "
                 >
-                  <div className="flex items-center" onClick={() => filterCategoryProduct(category.value)}>
-                    <span className="pr-2.5 text-sm font-bold uppercase group-one-hover:text-vivid-orange">{category.value}</span>
+                  <div className="flex items-center" onClick={() => categoryProduct(`${category.slug}`)}>
+                    <span className="pr-2.5 text-sm font-bold uppercase group-one-hover:text-red-600">{category.name}</span>
                     <MdKeyboardArrowDown
                       size={22}
                       className="arrow-down-icon block group-one-hover:hidden"
                     />
                     <BiMinus
                       size={22}
-                      className="minus-icon hidden group-one-hover:block group-one-hover:text-vivid-orange"
+                      className="minus-icon hidden group-one-hover:block group-one-hover:text-red-600"
                     />
                   </div>
                   <div className="absolute w-[100%] top-12 left-0 bg-white z-20 shadow-2xl rounded hidden group-one-hover:block ">
@@ -156,20 +155,20 @@ function Header() {
                         return (
                           <li
                             key={x}
-                            className="p-3 text-lg font-bold flex items-start flex-col cursor-pointer"
+                            className="p-3 pr-0 text-lg font-bold flex items-start flex-col cursor-pointer"
                           >
-                            <div className="flex items-center justify-center">
-                              <MdKeyboardArrowRight size={24} className="text-vivid-orange" />
-                              <span className="primary-text-shadow text-sm uppercase">{sub.value}</span>
+                            <div className="flex items-center justify-center group-two" onClick={() => categoryProduct(`${category.slug}/${sub.slug}`)}>
+                              <MdKeyboardArrowRight size={24} className="text-red-600" />
+                              <span className="text-sm uppercase group-two-hover:text-red-600">{sub.name}</span>
                             </div>
                             <div>
                               <ul>
                                 {sub.sub_child_categories.map((sub_child, z: number) => {
                                   return (
                                     <li key={z} className="py-1 pl-2">
-                                      <div className="flex items-center justify-start">
-                                        <MdKeyboardArrowRight size={24} className="text-vivid-orange" />
-                                        <span className="font-normal text-sm primary-text-shadow uppercase">{sub_child.value}</span>
+                                      <div className="flex items-center justify-start group-three" onClick={() => categoryProduct(`${category.slug}/${sub.slug}/${sub_child.slug}`)}>
+                                        <MdKeyboardArrowRight size={24} className="text-red-600" />
+                                        <span className="font-normal text-sm uppercase group-three-hover:text-red-600">{sub_child.name}</span>
                                       </div>
                                     </li>
                                   )

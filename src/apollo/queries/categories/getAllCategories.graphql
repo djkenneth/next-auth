@@ -1,16 +1,20 @@
-query getCategories {
-  categories {
+# Write your query or mutation here
+query getCategories($pageSize: Int) {
+  categories(pagination: { pageSize: $pageSize }) {
     data {
       attributes {
-        value,
+        name,
+        slug,
         sub_categories {
           data {
             attributes {
-              value,
+              name,
+              slug,
               sub_child_categories {
                 data {
                   attributes {
-                    value
+                    name,
+                    slug,
                   }
                 }
               }

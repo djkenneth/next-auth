@@ -17,7 +17,7 @@ const ImageSlider = ({ image }) => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2 mb-2"
       >
-        {image.data.map((img, i: number) => {
+        {image?.data?.map((img, i: number) => {
           return (
             <SwiperSlide key={i} className="select-none">
               <div className="flex justify-center align-middle">
@@ -36,7 +36,7 @@ const ImageSlider = ({ image }) => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper3"
       >
-        {image.data.map((img, i) => {
+        {image?.data?.map((img, i) => {
           return (
             <SwiperSlide key={i}>
               <div className="flex justify-center align-middle">

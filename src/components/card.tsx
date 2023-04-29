@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Heading, Text } from "./global/index";
 import { useRouter } from "next/router";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import ReactStars from "react-rating-stars-component";
 
 const Card = ({ product }) => {
@@ -22,9 +23,9 @@ const Card = ({ product }) => {
   return (
     <div
       onClick={handleClick}
-      className="group-two shadow-lg shadow-gray-300 border-2 min-w-[15rem] max-w-[16rem]"
+      className="group-two shadow-xs shadow-gray-300 min-w-[15rem] max-w-[16rem]"
     >
-      <div className="flex justify-center justify-items-center p-1 relative bg-white">
+      <div className="flex justify-center justify-items-center p-1 relative">
         <div className="absolute top-3 right-3 z-10 p-1 rounded">
           <FaHeart size={20} />
         </div>
@@ -34,45 +35,45 @@ const Card = ({ product }) => {
             alt="Product Item"
             style={{
               objectFit: "cover",
-              minHeight: "200px",
-              maxWidth: "200px",
-              maxHeight: "200px",
+              minHeight: "250px",
+              maxWidth: "250px",
+              maxHeight: "250px",
             }}
             width={200}
             height={200}
-          // className="bg-slate-800"
           />
         </div>
-        <div className="hidden group-two-hover:block absolute bottom-0">
-          <button className="flex justify-center border-[1px] text-xs font-bold  py-1 px-2 bg-vivid-orange rounded-lg border-gray-700">
-            <FaShoppingCart size={20} className="mr-2" />
-            <span className="text-gray-900">ADD TO CART</span>
-          </button>
-        </div>
+
       </div>
-      <div className="bg-gray-100 text-center p-2 pt-4 min-h-[190px]">
-        <Heading className="text-sm font-bold text-vivid-orange mb-2 line-clamp-2">
+      <div className="p-2 pt-4 flex-col min-h-[160px]">
+        <Heading className="text-sm font-medium mb-1 line-clamp-1">
           {product.attributes.name}
         </Heading>
-        {/* <Text className="text-[12px] text-gray-600 font-semibold mb-2">{product.brand}</Text> */}
+
         <div className="flex justify-center">
-          <Heading
-            className={`mr-3 text-xl font-medium ${product.attributes.compare_at_price ? "text-vivid-orange" : "text-black"
-              }`}
-          >
-            ₱{priceFormatter(product.attributes.price)}
-          </Heading>
+          <ReactStars size={20} value={0} edit={false} />
+        </div>
+
+        <div className="flex justify-center items-center mb-4">
           {(product.attributes.compare_at_price || product.attributes.compare_at_price > 0) && (
-            <Heading className="text-xl font-medium line-through mb-1">
+            <Heading className="text-sm font-medium text-light-gray-500 tracking-wide line-through">
               ₱{priceFormatter(product.attributes.compare_at_price)}
             </Heading>
           )}
+
+          <Heading
+            className={`ml-1 text-lg font-medium tracking-wide ${product.attributes.compare_at_price ? "text-red-600" : "text-black"}`}>
+            ₱{priceFormatter(product.attributes.price)}
+          </Heading>
         </div>
 
         <div className="flex justify-center">
-          <ReactStars size={20} value={5} edit={false} />
+          <button className="group-one flex justify-center items-center border-[1px] text-xs font-semibold py-1 px-2 bg-light-gray-50 rounded-sm border-light-gray-50 hover:bg-red-600 hover:border-red-600">
+            <HiOutlineShoppingBag size={20} className="mr-2 text-light-gray-500 group-one-hover:text-white" />
+            <span className="text-light-gray-500 group-one-hover:text-white">ADD TO CART</span>
+          </button>
         </div>
-        <Text className="text-sm font-medium">5 review(s)</Text>
+
       </div>
     </div>
   );

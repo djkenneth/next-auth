@@ -10,7 +10,6 @@ const ProductSwiper = ({ products }) => {
   return (
     <Swiper
       slidesPerView={4}
-      spaceBetween={50}
       slidesPerGroup={1}
       loop={true}
       loopFillGroupWithBlank={true}
@@ -19,7 +18,7 @@ const ProductSwiper = ({ products }) => {
     >
       {products.map((product) => {
         return (
-          <SwiperSlide key={product.id} className="flex justify-center items-center select-none">
+          <SwiperSlide key={product.id} className="flex justify-start items-center select-none">
             <Card product={product} />
           </SwiperSlide>
         );

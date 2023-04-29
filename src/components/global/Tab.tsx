@@ -5,11 +5,11 @@ import { ITab } from '@/types'
 
 const Tab = ({ children, active, index, setOpenTab, ...rest }: ITab) => {
   return (
-    <li className="-mb-px mr-2 last:mr-0 text-center cursor-pointer">
+    <li className="-mb-px ml-10 last:mr-0 text-center cursor-pointer">
       <a
         className={
-          "text-xs font-bold uppercase px-5 py-3 rounded-full block leading-normal " +
-          (active === index ? `text-black bg-vivid-yellow` : `text-black bg-[#f9fafb]`)
+          "text-sm font-medium uppercase px-1 pt-3 block leading-normal tracking-widest " +
+          (active === index ? `text-red-600 border-b-2 border-red-600` : `text-dark-gray`)
         }
         onClick={(e) => {
           e.preventDefault();
