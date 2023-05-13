@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { Heading, Text } from "./global/index";
 import { useRouter } from "next/router";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import ReactStars from "react-rating-stars-component";
+import { Box, Flex, Icon, Heading, Text, Button } from "@chakra-ui/react";
 
 const Card = ({ product }) => {
   const router = useRouter();
@@ -21,61 +21,58 @@ const Card = ({ product }) => {
     });
   };
   return (
-    <div
+    <Box
       onClick={handleClick}
-      className="group-two shadow-xs shadow-gray-300 min-w-[15rem] max-w-[16rem]"
+      minWidth={'15rem'}
+      maxWidth={'16rem'}
     >
-      <div className="flex justify-center justify-items-center p-1 relative">
-        <div className="absolute top-3 right-3 z-10 p-1 rounded">
-          <FaHeart size={20} />
-        </div>
-        <div className="py-1">
+      <Flex 
+      justifyContent={'center'}
+      alignItems={'center'}
+      p={1}
+      position={'relative'}
+      >
+        <Icon as={FaHeart} boxSize={5} position={'absolute'} top={3} right={3} zIndex={10} />
+        <Box py={1}>
           <Image
             src={product.attributes.image.data[0].attributes.url}
             alt="Product Item"
-            style={{
-              objectFit: "cover",
-              minHeight: "250px",
-              maxWidth: "250px",
-              maxHeight: "250px",
-            }}
+            style={{ objectFit: "cover", minHeight: "250px", maxWidth: "250px", maxHeight: "250px" }}
             width={200}
             height={200}
           />
-        </div>
-
-      </div>
-      <div className="p-2 pt-4 flex-col min-h-[160px]">
-        <Heading className="text-sm font-medium mb-1 line-clamp-1">
+        </Box>
+      </Flex>
+      <Flex p={2} pt={4} direction={'column'} minHeight={'160px'}>
+        <Heading fontSize={'sm'} fontWeight={'medium'} mb={1} noOfLines={1}>
           {product.attributes.name}
         </Heading>
 
-        <div className="flex justify-center">
+        <Flex justifyContent={'center'}>
           <ReactStars size={20} value={0} edit={false} />
-        </div>
+        </Flex>
 
-        <div className="flex justify-center items-center mb-4">
+        <Flex justifyContent={'center'} alignItems={'center'} mb={4}>
           {(product.attributes.compare_at_price || product.attributes.compare_at_price > 0) && (
-            <Heading className="text-sm font-medium text-light-gray-500 tracking-wide line-through">
+            <Text as='s' fontSize={'sm'} fontWeight={'medium'} color={'dustyGray.500'} letterSpacing={'wide'}>
               ₱{priceFormatter(product.attributes.compare_at_price)}
-            </Heading>
+            </Text>
           )}
 
-          <Heading
-            className={`ml-1 text-lg font-medium tracking-wide ${product.attributes.compare_at_price ? "text-red-600" : "text-black"}`}>
+          <Text ml={1} fontSize={'lg'} fontWeight={'medium'} letterSpacing={'wide'} color={ product.attributes.compare_at_price ? 'crimsonRed.500' : 'codGray.500' }>
             ₱{priceFormatter(product.attributes.price)}
-          </Heading>
-        </div>
+          </Text>
+        </Flex>
 
-        <div className="flex justify-center">
-          <button className="group-one flex justify-center items-center border-[1px] text-xs font-semibold py-1 px-2 bg-light-gray-50 rounded-sm border-light-gray-50 hover:bg-red-600 hover:border-red-600">
-            <HiOutlineShoppingBag size={20} className="mr-2 text-light-gray-500 group-one-hover:text-white" />
-            <span className="text-light-gray-500 group-one-hover:text-white">ADD TO CART</span>
-          </button>
-        </div>
+        <Flex justifyContent={'center'}>
+          <Button leftIcon={<HiOutlineShoppingBag />} size='sm' bgColor={'wildGray.500'} color={'dustyGray.500'}
+            _hover={{ bgColor: 'crimsonRed.500', color: 'white' }}>
+            ADD TO CART
+          </Button>
+        </Flex>
 
-      </div>
-    </div>
+      </Flex>
+    </Box>
   );
 };
 

@@ -1,9 +1,11 @@
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+import { ChakraProvider } from '@chakra-ui/react'
+
+
+// styles
+import { theme } from '@/styles/theme/theme';
+
+// Import Splide styles
+import '@splidejs/react-splide/css';
 
 import "../styles/globals.scss";
 
@@ -19,12 +21,14 @@ function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps)
 
   return (
-    <ApolloProvider client={apolloClient}>
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </ApolloProvider>
+    <ChakraProvider theme={theme}>
+      <ApolloProvider client={apolloClient}>
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </ApolloProvider>
+    </ChakraProvider>
   );
 }
 

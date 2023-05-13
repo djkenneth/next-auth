@@ -1,29 +1,29 @@
 import React from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+// Import Splide React components
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 // Components
 import Card from "../card";
 
 const ProductSwiper = ({ products }) => {
   return (
-    <Swiper
-      slidesPerView={4}
-      slidesPerGroup={1}
-      loop={true}
-      loopFillGroupWithBlank={true}
-      navigation={true}
-      modules={[Pagination, Navigation]}
+    <Splide
+      aria-label="My Favorite Images"
+      options={{
+        perPage: 3,
+        arrows: false,
+        pagination: false,
+        autoplay: true,
+      }}
     >
       {products.map((product) => {
         return (
-          <SwiperSlide key={product.id} className="flex justify-start items-center select-none">
+          <SplideSlide key={product.id}>
             <Card product={product} />
-          </SwiperSlide>
+          </SplideSlide>
         );
       })}
-    </Swiper>
+    </Splide>
   );
 };
 

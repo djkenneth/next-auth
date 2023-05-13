@@ -1,95 +1,15 @@
 /* ./styles/globals.css */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-// @layer base {
-//   @font-face {
-//     font-family: "HelveticaNeue Thin";
-//     font-weight: 100;
-//     font-style: normal;
-//     src: url("../public/fonts/HelveticaNeue-Thin.woff2") format("woff2");
-//   }
 
-//   @font-face {
-//     font-family: "HelveticaNeue Light";
-//     font-weight: 300;
-//     font-style: normal;
-//     src: url("../public/fonts/HelveticaNeue-Light.woff2") format("woff2");
-//   }
-
-//   @font-face {
-//     font-family: "HelveticaNeue";
-//     font-weight: 400;
-//     // font-style: normal;
-//     src: url("../public/fonts/HelveticaNeue.woff2") format("woff2");
-//   }
-
-//   @font-face {
-//     font-family: "HelveticaNeue Medium";
-//     font-weight: 500;
-//     font-style: normal;
-//     src: url("../public/fonts/HelveticaNeue-Bold.woff2") format("woff2");
-//   }
-
-//   @font-face {
-//     font-family: "HelveticaNeue Bold";
-//     font-weight: 700;
-//     font-style: normal;
-//     src: url("../public/fonts/HelveticaNeue-Bold.woff2") format("woff2");
-//   }
-// }
-
-@layer base {
-  body {
-    @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-red-600
-  }
-}
-
-@layer utilities {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
-.mySwiper2 {
+.mySplide .is-active {
   border: 1px solid #dddddd;
 }
 
-.mySwiper3 .swiper-slide {
+.mySplide1 {
+  margin-top: 10px;
+}
+
+.mySplide1 .splide__track--nav>.splide__list>.splide__slide.is-active {
   border: 1px solid #dddddd;
-  border-bottom: 2px solid #f59e0b;
-  opacity: 0.3;
-}
-
-.mySwiper3 .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-.swiper-button-next {
-  background-image: url("../../public/assets/angle-right-solid.svg");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-  background-size: 15px;
-  color: #f59e0b;
-}
-
-.swiper-button-next::after {
-  display: none;
-}
-
-.swiper-button-prev {
-  background-image: url("../../public/assets/angle-left-solid.svg");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-  background-size: 15px;
-  color: #f59e0b;
-}
-
-.swiper-button-prev::after {
-  display: none;
+  border-bottom: 2px solid #e12a27;
 }

@@ -1,52 +1,79 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper";
+// Import Splide React components
+import { Box } from "@chakra-ui/react";
+import { Options, Splide, SplideSlide } from '@splidejs/react-splide';
 
 const ImageSlider = ({ image }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const mainRef = useRef<Splide>(null);
+  const thumbsRef = useRef<Splide>();
+
+  const mainOptions: Options = {
+    type      : 'slide',
+    perPage   : 1,
+    perMove   : 1,
+    gap       : '1rem',
+    pagination: false,
+    heightRatio: 0.8,
+    cover      : true,
+  };
+
+  const thumbsOptions: Options = {
+    type        : 'slide',
+    gap         : 10,
+    pagination  : false,
+    rewind      : true,
+    fixedWidth  : 120,
+    fixedHeight : 90,
+    cover       : true,
+    focus       : 'center',
+    isNavigation: true,
+    arrows     : false,
+    classes: {
+      pagination: 'splide__pagination your-class-pagination',
+    },
+    dragMinThreshold: {
+      mouse: 4,
+      touch: 10,
+    },
+  };
+
+  useEffect(() => {
+    if ( mainRef.current && thumbsRef.current && thumbsRef.current.splide ) {
+      mainRef.current.sync( thumbsRef.current.splide );
+    }
+  }, [mainRef.current, thumbsRef.current])
 
   return (
-    <div className="mx-auto">
-      <Swiper
-        loop={true}
-        spaceBetween={10}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 mb-2"
-      >
-        {image?.data?.map((img, i: number) => {
-          return (
-            <SwiperSlide key={i} className="select-none">
-              <div className="flex justify-center align-middle">
-                <Image src={img.attributes.url} blurDataURL={img.attributes.url} alt="Banner" width="400" height="400" />
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={8}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper3"
-      >
-        {image?.data?.map((img, i) => {
-          return (
-            <SwiperSlide key={i}>
-              <div className="flex justify-center align-middle">
-                <Image src={img.attributes.url} alt="Banner" width={70} height={70} />
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    </div>
+    <Box mx={'auto'}>
+      <Splide
+          className={'mySplide'}
+          options={ mainOptions }
+          ref={mainRef}
+          aria-labelledby="thumbnail-slider-example"
+        >
+          {image?.data?.map((img, i: number) => (
+            <SplideSlide key={i}>
+                <Image src={img.attributes.url} blurDataURL={img.attributes.url} style={{ objectFit: 'cover' }} alt="Banner" width="400" height="400" />
+            </SplideSlide>
+          )
+        )}
+        </Splide>
+
+        <Splide
+          className={'mySplide1'}
+          options={ thumbsOptions }
+          ref={thumbsRef}
+          aria-label="The carousel with thumbnails. Selecting a thumbnail will change the main carousel"
+        >
+          {image?.data?.map((img, i) =>(
+              <SplideSlide key={i}>
+                  <Image src={img.attributes.url} alt="Banner" style={{ objectFit: 'cover' }} width={70} height={70} />
+              </SplideSlide>
+            )
+          )}
+        </Splide>
+    </Box>
   );
 };
 
